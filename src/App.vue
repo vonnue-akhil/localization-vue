@@ -6,7 +6,7 @@
 
 <template>
 	<div>
-		<p v-t="{ path: 'message.hi', args: { name: 'Akhil' } }"></p>
+		<p v-t="{ path: 'hi', args: { name: 'Akhil' } }"></p>
 		selected language: {{ $i18n.locale }}
 		<select v-model="$i18n.locale">
 			<option
@@ -18,7 +18,7 @@
 			</option>
 		</select>
 		<h1>Hello World</h1>
-		<p v-t="{ path: 'message.apple', plural: appleCount }"></p>
+		<p v-t="{ path: 'apple', plural: appleCount }"></p>
 		<div class="button-container">
 			<button
 				type="button"

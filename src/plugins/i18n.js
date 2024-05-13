@@ -1,23 +1,29 @@
 import { createI18n } from 'vue-i18n'
+// import messages from '../assets/locale/test_en.json'
 
-const i18n = createI18n({
-    locale: 'en',
-    messages: {
-        en: {
-            message: {
-                hi: 'Hi, {name}!',
-                bye: 'good bye!',
-                apple: 'no apples | one apple | {count} apples'
-            }
-        },
-        ja: {
-            message: {
-                hi: 'こんにちは、 {name}！',
-                bye: 'さようなら！',
-                apple: 'リンゴはありません | 一つのりんご | {count} りんご'
-            }
-        }
+async function getLocalTranslations() {
+    const messages = {};
+    const codes = [
+        'en',
+        'ja',
+    ];
+
+    for (let i = 0, len = codes.length; i < len; i++) {
+        const code = codes[i];
+        const translations = await import(`../assets/locale/${code}.json`);
+        messages[code] = translations;
     }
+
+    return messages;
+}
+
+let i18n = createI18n({
+    legacy: false,
+    locale: 'en',
+    fallbackLocale: 'en',
+    silentTranslationWarn: true,
+    messages: await getLocalTranslations(),
+    missingWarn: false,
 })
 
 export default i18n

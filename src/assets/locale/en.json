@@ -1,0 +1,5 @@
+{
+    "hi": "Hi, {name}!",
+    "bye": "good bye!",
+    "apple": "no apples | one apple | {count} apples"
+}
