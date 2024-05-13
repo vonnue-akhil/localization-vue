@@ -2,15 +2,16 @@
 	import { ref } from "vue";
 
 	const appleCount = ref(0);
+	const languageCodes = ["en", "ja", "de", "nl","ml"];
 </script>
 
 <template>
 	<div>
-		<p v-t="{ path: 'hi', args: { name: 'Akhil' } }"></p>
+		<p>{{ $t("hi", { name: "Akhil" }) }}</p>
 		selected language: {{ $i18n.locale }}
 		<select v-model="$i18n.locale">
 			<option
-				v-for="locale in $i18n.availableLocales"
+				v-for="locale in languageCodes"
 				:key="`locale-${locale}`"
 				:value="locale"
 			>
@@ -18,7 +19,7 @@
 			</option>
 		</select>
 		<h1>Hello World</h1>
-		<p v-t="{ path: 'apple', plural: appleCount }"></p>
+		<p>{{ $t("apple", appleCount) }}</p>
 		<div class="button-container">
 			<button
 				type="button"
@@ -41,6 +42,7 @@
 				reset apple count
 			</button>
 		</div>
+		{{ $t("bye") }}
 	</div>
 </template>
 
