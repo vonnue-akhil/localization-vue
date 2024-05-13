@@ -1,24 +1,11 @@
-import Vue from 'vue';
-import VueI18n from 'vue-i18n';
+import { createI18n } from 'vue-i18n'
 
-Vue.use(VueI18n);
-
-const messages = {
-    en: {
-        message: {
-            hello: 'Hello, {name}!'
-        }
-    },
-    de: {
-        message: {
-            hello: 'Guten Tag, {name}!'
-        }
-    }
-};
-
-const i18n = new VueI18n({
+const i18n = createI18n({
     locale: 'en',
-    messages
-});
+    messages: {
+        en: { hello: 'hi there!' },
+        ja: { hello: 'こんにちは！' }
+    }
+})
 
-export default { i18n }
+export default i18n
