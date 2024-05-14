@@ -1,7 +1,2 @@
-# Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+# LOCALIZATION IN VUE
+We have implemented a localization strategy that involves utilizing the [vue-i18n package](https://vue-i18n.intlify.dev/) for seamless language switching, [crowdin](https://crowdin.com/) for high-quality translation services, and [crowdin ota-client](https://crowdin.github.io/ota-client-js/) for direct integration with the translations available on crowdin. Using vue-i18n for localization and changing the language, crowdin for language translation, and crowdin ota-client for using the translation directly from the crowdin instead of downloading it locally.
